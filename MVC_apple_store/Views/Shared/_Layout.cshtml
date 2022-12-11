@@ -62,69 +62,23 @@
                         <li class="nav-item">
                              <a class="nav-link" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        @{
+                        @if (SignInManager.IsSignedIn(User))
+                        {
                             int cartCount = Context.Session.GetObject<List<int>>(WebConstants.cartListKey)?.Count ?? 0;
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Cart" asp-action="Index">
+                                    <i class="bi bi-basket3"></i> (@cartCount)
+                                </a>
+                            </li>
                         }
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Cart" asp-action="Index">
-                                <i class="bi bi-basket3"></i> (@cartCount)
-                            </a>
-                        </li>
-                            <partial name="_LoginPartial" />
+                        <partial name="_LoginPartial" />
                     </ul>
-                    @*<partial name="_LoginPartial" />*@
                 </div>
             </div>
         </div>
     </nav>
-
-    @*<header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ferrari Autos</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Cars" asp-action="Index">AUTO</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Management
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" asp-controller="Cars" asp-action="Manage">Auto</a></li>
-                            </ul>
-                        </li>
-                        @{
-                            int cartCount = Context.Session.GetObject<List<int>>(WebConstants.cartListKey)?.Count ?? 0;
-                        }
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Cart" asp-action="Index">
-                                <i class="bi bi-basket3"></i> (@cartCount)
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Orders" asp-action="Index">
-                                Orders
-                            </a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial"/>
-                </div>
-            </div>
-        </nav>*@
     </header>
-    <div @*class="container"*@>
+    <div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

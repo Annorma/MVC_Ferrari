@@ -32,27 +32,3 @@
         </div>
     </div>
 }
-
-@*<seciton class="text-center">
-    <h2>FERRARI FASHION SHOW S/S 2023</h2>
-    <p>25 SEPTEMBER 2022 - 11.30 a.m. CEST</p>
-</seciton>
-<hr />
-<div>
-    <h3 class="text-center my-4">Our latest models</h3>
-    <div class="list-group">
-        @foreach (var car in Model)
-        {
-            <a asp-action="Details" asp-route-id="@car.Id" class="list-group-item list-group-item-action" aria-current="true">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">@car.Model</h5>
-                    <small>@car.Price$</small>
-                </div>
-                <p class="mb-1">@car.Color.Name</p>
-                <small>@car.Description</small>
-            </a>
-        }
-    </div>
-    <p class="text-center mt-2">Count: @Model.Count()</p>
-</div>*@
-

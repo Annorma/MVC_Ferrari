@@ -56,10 +56,6 @@ namespace MVC_Ferrari.Controllers
         {
             var colors = new SelectList(context.Colors, nameof(Color.Id), nameof(Color.Name));
 
-            // ViewData - type Conversion code is required while enumerating
-            // ViewData["ColorList"] = colors;
-
-            // ViewBag - used dynamic, so there is no need to type conversion while enumerating
             ViewBag.ColorList = colors;
 
             return View();
@@ -84,7 +80,7 @@ namespace MVC_Ferrari.Controllers
             return RedirectToAction(nameof(Manage));
         }
 
-        // GET: /Phones/Edit/{id}
+        // GET: /Cars/Edit/{id}
         public IActionResult Edit(int id)
         {
             if (id < 0) return BadRequest();

@@ -41,46 +41,6 @@
     </div>
 }
 
-@*<h1 class="text-center nm-h">Car List</h1>
-
-<table class="table mt-4">
-    <thead>
-        <tr>
-            <th scope="col"><h6>#</h6></th>
-            <th scope="col"><h6>Image</h6></th>
-            <th scope="col"><h6>Model</h6></th>
-            <th scope="col"><h6>Color</h6></th>
-            <th scope="col"><h6>0-100Km/h</h6></th>
-            <th scope="col"><h6>Price</h6></th>
-            <th scope="col"><h6>Description</h6></th>
-            <th scope="col"><h6>Actions</h6></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var car in Model)
-        {
-            <tr>
-                <th class="align-middle" scope="row">@car.Id</th>
-                <td class="align-middle">
-                    <img src="@car.ImagePath" width="50"/>
-                </td>
-                <td class="align-middle">@car.Model</td>
-                <td class="align-middle">@car.Color?.Name</td>
-                <td class="align-middle">in @car.StoKMh s</td>
-                <td class="align-middle">@car.Price $</td>
-                <td class="align-middle">@car.Description</td>
-                <td class="align-middle">
-                    <div class="btn-group" role="group">
-                        <a asp-action="Edit" asp-route-id="@car.Id" class="btn btn-warning">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@car.Id" class="btn btn-danger">Delete</a>
-                    </div>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-*@
-
 <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
     <div id="toastr-block" data-bs-autohide="true" data-bs-animation="true" class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
