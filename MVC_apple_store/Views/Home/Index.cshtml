@@ -1,0 +1,25 @@
+﻿@*@model IEnumerable<DataAccess.Entities.Car>;*@
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<video autoplay loop muted plays-inline class="back-video">
+    <source src="https://bespoke-moonbeam-f18ee0.netlify.app/ferrari-bg.mp4" type="video/mp4" />
+</video>
+
+<div class="main-header">
+    <div class="main-components">
+        <h1>Virtual Reality</h1>
+        <a asp-controller="Cars" asp-action="Index">Explore</a>
+    </div>
+</div>
+
+
+
+@*<div class="row row-cols-4 g-3">
+    @foreach (var i in Model)
+    {
+        <partial name="_ProductCardPartial" model="@i" />
+    }
+</div>*@
